@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy | Vedantra.ai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+  <style>
+    :root {
+      --primary-color: #8b5cf6;
+      --accent-color: #ec4899;
+      --bg-color: #0a0a1f;
+      --white: #ffffff;
+      --gray: #cbd5e1;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(90deg, #7c3aed, #a855f7);
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(236,72,153,0.15) 20%, transparent 60%);
+      animation: pulse 6s infinite linear;
+      top: -50%;
+      left: -50%;
+      z-index: 0;
+    }
+    @keyframes pulse {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.2); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+    }
+    h2 {
+      color: var(--accent-color);
+      border-left: 4px solid var(--accent-color);
+      padding-left: 10px;
+      margin-top: 40px;
+    }
+    a {
+      color: var(--accent-color);
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #f472b6;
+    }
+    .container {
+      background-color: #151527;
+      color: var(--gray);
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--gray);
+      font-size: 0.9em;
+    }
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+      margin: 40px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header data-aos="fade-down">
+    <h1>Refund Policy</h1>
+  </header>
+
+  <div class="container" data-aos="fade-up">
+    <p>At <strong>Vedantra.ai</strong>, we are committed to providing high-quality services and maintaining transparent practices regarding refunds for our clients and partners.</p>
+
+    <div class="section-divider" data-aos="fade-right"></div>
+    <h2 data-aos="fade-left">1. Refund Eligibility</h2>
+    <p data-aos="fade-up">Refunds are only applicable under specific circumstances, such as:</p>
+    <ul data-aos="fade-up">
+      <li>Duplicate payment identified within 7 days of the transaction.</li>
+      <li>Service not delivered as per the agreed scope documented in the contract.</li>
+      <li>Cancellation requests received before the commencement of service or project work.</li>
+    </ul>
+
+    <div class="section-divider" data-aos="fade-left"></div>
+    <h2 data-aos="fade-right">2. Refund Process</h2>
+    <p data-aos="fade-up">To request a refund, please email us at <a href="mailto:vedantraai@gmail.com">vedantraai@gmail.com</a> with your payment details and reason for the refund request. We will review your request within 5-7 business days and notify you of the approval or rejection of your refund.</p>
+
+    <div class="section-divider" data-aos="fade-left"></div>
+    <h2 data-aos="fade-right">3. Processing Time</h2>
+    <p data-aos="fade-up">If your refund is approved, it will be processed within 7-14 business days to your original payment method, depending on your bank or payment gateway’s processing times.</p>
+
+    <div class="section-divider" data-aos="fade-left"></div>
+    <h2 data-aos="fade-right">4. Contact Information</h2>
+    <p data-aos="fade-up">For questions regarding our refund policy, please reach out to us:<br>
+    📧 <a href="mailto:vedantraai@gmail.com">vedantraai@gmail.com</a></p>
+
+    <div class="footer" data-aos="fade-up">&copy; 2025 Vedantra.ai. All rights reserved.</div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({duration: 800, once: true});</script>
+</body>
+</html>

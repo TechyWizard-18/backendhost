@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Commerce Solutions | Vedantra.ai</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0b001a;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    .preloader {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #1c0033;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+      color: white;
+      transition: opacity 0.5s ease;
+    }
+    .preloader i {
+      font-size: 60px;
+      color: #ff69f2;
+      animation: pulse 1.5s infinite;
+    }
+    .preloader span {
+      margin-top: 16px;
+      font-size: 20px;
+      color: #ffcaff;
+      font-weight: 600;
+      background: linear-gradient(90deg, #e040fb, #8e24aa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: flicker 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.6; }
+    }
+    .main-content {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .main-content.visible {
+      opacity: 1;
+    }
+    header {
+      padding: 0px 60px;
+      background: rgba(15, 15, 26, 0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+    }
+      .logo {
+      display: flex;
+      align-items: center;
+      height: 100px;
+      width: 130px;
+    }
+
+    .logo img {
+      height: 180px;
+      margin-right: 10px;
+      object-fit: cover;
+      width: 180px;
+      object-fit: cover;
+    }
+    .navbar {
+  margin-left: auto;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #f94ef7;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #14002d;
+  padding: 15px 0;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(249, 78, 247, 0.15);
+}
+.dropdown {
+  position: relative;
+  list-style: none;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+  list-style: none;
+}
+.dropdown-menu li a {
+  display: block;
+  color: #fff;
+}
+.dropdown-menu li a:hover {
+  color: #f94ef7;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+.arrow {
+  font-size: 0.6em;
+  margin-left: 4px;
+}
+.navbar-toggle {
+  display: none;
+}
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #0b001a;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 20px;
+    z-index: 998;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .navbar-toggle {
+    display: block;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
+   
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(106, 0, 128, 0.6), rgba(0, 0, 0, 0.85));
+      padding: 80px 20px 50px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #f94ef7, #d76dff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+    .section-title {
+      font-size: 2.4rem;
+      color: #f94ef7;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    ul, ol {
+      font-size: 1.2rem;
+      line-height: 2;
+      list-style: none;
+      padding: 0;
+    }
+    .tech-stack ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0;
+    }
+    .tech-stack ul li {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      list-style: none;
+      border: 1px solid transparent;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tech-stack ul li img {
+      height: 40px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    .tech-stack ul li:hover {
+      box-shadow: 0 0 15px rgba(249, 78, 247, 0.4);
+    }
+    .cta-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .cta-section a {
+      display: inline-block;
+      background: #f94ef7;
+      color: #0f0f1a;
+      padding: 16px 30px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .cta-section a:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+footer {
+      background: #1a1a26;
+      color: #aaa;
+      padding: 10px 10px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1 1 220px;
+}
+
+.footer-col h3 {
+  font-size: 1.2rem;
+  color: #FEFEFE;
+  margin-bottom: 15px;
+}
+
+.footer-col p,
+.footer-col li {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col.subscribe .input-wrapper {
+  display: flex;
+  margin-bottom: 10px;
+  background-color: #25163F;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.footer-col.subscribe input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  color: white;
+  background-color: #25163F;
+}
+
+.footer-col.subscribe button {
+  background-color: #F94EF7;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 40px 0 20px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footer-bottom .links a {
+  color: #ccc;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.footer-bottom .links a:hover {
+  color: #F94EF7;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom .links a {
+    margin-left: 0;
+    margin-right: 15px;
+  }}
+
+    .split-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .split-section img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(249, 78, 247, 0.4);
+    }
+    .split-text, .split-image {
+      flex: 1;
+    }
+    .why-us {
+      background: radial-gradient(circle, #1a1a26, #0f0f1a);
+      text-align: center;
+      padding-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+  .split-section {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .split-section .split-text, .split-section .split-image {
+    width: 100%;
+  }
+  .split-section img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  ul, ol {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+    text-align: left;
+    display: inline-block;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="preloader">
+    <i class="fas fa-shopping-cart"></i>
+    <span>Loading E-Commerce Page...</span>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <div class="logo">
+        <img src="assets/new_logo.png" alt="Vedantra.ai Logo">
+      </div>
+      <div class="header-right">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">SERVICES <span class="arrow">▼</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="service_web.html">Web Development</a></li>
+            <li><a href="service_app.html">App Development</a></li>
+            <li><a href="service_ui_ux.html">UI/UX Design</a></li>
+            <li><a href="service_mantain.html">Maintanance and Support</a></li>
+            <li><a href="service_ecom.html">E-Commerce</a></li>
+            <li><a href="service_seo.html">SEO</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html">PORTFOLIO</a></li>
+        <li><a href="contact.html">CONTACT US</a></li>
+      </ul>
+    </nav>
+    <div class="navbar-toggle"><i class="fas fa-bars"></i></div>
+  </div>
+    </header>
+    <section class="hero">
+      <h1>E-Commerce Solutions</h1>
+      <p>Build powerful online stores and marketplaces tailored for success.</p>
+    </section>
+    <section class="split-section">
+      <div class="split-image">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="E-Commerce Illustration">
+      </div>
+      <div class="split-text">
+        <h2 class="section-title">What We Offer</h2>
+        <ul>
+          <li><i class="fas fa-shopping-cart"></i> Fully customizable online stores</li>
+          <li><i class="fas fa-globe"></i> Multi-language and multi-currency support</li>
+          <li><i class="fas fa-lock"></i> Secure payment gateway integration</li>
+          <li><i class="fas fa-chart-line"></i> Sales analytics and performance insights</li>
+        </ul>
+      </div>
+    </section>
+    <section class="split-section">
+      <div class="split-text">
+        <h2 class="section-title">Our Approach</h2>
+        <ul>
+          <li><i class="fas fa-puzzle-piece"></i> Tailored solutions based on your business model</li>
+          <li><i class="fas fa-users"></i> User-centered design for seamless shopping experience</li>
+          <li><i class="fas fa-tools"></i> Integration with top platforms and third-party services</li>
+          <li><i class="fas fa-sync"></i> Continuous testing and optimization</li>
+        </ul>
+      </div>
+      <div class="split-image">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Approach Image">
+      </div>
+    </section>
+    <section class="tech-stack">
+      <h2 class="section-title">Tech Stack</h2>
+      <ul>
+        <li><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Shopify_logo.svg" alt="Shopify">Shopify</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg" alt="WooCommerce">WooCommerce</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/magento/magento-original.svg" alt="Magento">Magento</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">React</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="NextJS">Next.js</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS">Node.js</li>
+      </ul>
+    </section>
+    <section class="why-us">
+      <div class="split-text">
+        <h2 class="section-title">Why Choose Vedantra.ai?</h2>
+        <p>
+          Our e-commerce solutions are not just about creating an online store. We deliver high-converting shopping experiences,
+          intuitive user flows, and powerful integrations that drive sales and customer retention.
+        </p>
+      </div>
+    </section>
+    <section class="cta-section">
+      <a href="contact.html">Start Your Online Store Today</a>
+    </section>
+    <footer>
+<div class="footer-bottom">
+        <p>Copyright © 2025 Vedantra.ai. All rights reserved. </p>
+        <div class="links">
+          <a href="tnc.html">Terms of Use</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="refund.html">Refund Policy</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    window.addEventListener("load", () => {
+      const preloader = document.querySelector(".preloader");
+      const main = document.querySelector(".main-content");
+      setTimeout(() => {
+        preloader.style.display = "none";
+        main.classList.add("visible");
+      }, 1800);
+    });
+  </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector('.navbar-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdown = document.querySelector('.dropdown');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  dropdownToggle.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      dropdown.classList.toggle('open');
+    }
+  });
+});
+</script>
+</body>
+</html>

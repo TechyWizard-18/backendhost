@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <!-- Remix Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+<div class="main">
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/new_logo.png" alt="Logo">
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <div class="dropdown">
+                    <a href="#">SERVICES ▼</a>
+                    <div class="dropdown-content">
+                        <div style="height: 20px;"></div>
+                        <ul style="background: #7B209A; height: 2px;;"></ul>
+                        <a href="service_web.html">Web Development</a>
+                        <a href="service_app.html">App Development</a>
+                        <a href="service_ui_ux.html">UI/UX Design</a>
+                        <a href="service_mantain.html">Maintanance and Support</a>
+                        <a href="service_ecom.html">E-Commerce</a>
+                        <a href="service_seo.html">SEO</a>
+                    </div>
+                </div>
+                <a href="portfolio.html">PORTFOLIO</a>
+                <a href="#">CONTACT US</a>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+
+        <div class="services-toggle" onclick="toggleServices()">
+            <span>SERVICES</span>
+            <span id="toggle-icon">+</span>
+        </div>
+        <div class="sub-services" id="subServices">
+            <a href="service_web.html">Web Development</a>
+            <a href="service_app.html">App Development</a>
+            <a href="service_ui_ux.html">UI/UX Design</a>
+            <a href="service_mantain.html">Maintanance and Support</a>
+            <a href="service_ecom.html">E-Commerce</a>
+            <a href="service_seo.html">SEO</a>
+        </div>
+
+        <a href="portfolio.html">PORTFOLIO</a>
+        <a href="#">CONTACT US</a>
+    </div>
+
+
+    <section class="contact-banner">
+        <h1>Contact Us</h1>
+    </section>
+
+
+    <!-- Main  contact -->
+
+    <section class="contact-section">
+        <div class="contact-wrapper">
+
+            <div class="contact-left">
+                <h4>Getting Touch</h4>
+                <h2>Do you have a project in your mind?</h2>
+                <ul class="contact-info">
+                    <li><span>📞</span> +91 7289966310</li>
+                    <li><span>📧</span> Vedantraai@gmail.com</li>
+                    <li><span>📍</span> Huda Market Sector-10A, Gurugram (Haryana) 122001</li>
+                </ul>
+            </div>
+
+            <div class="contact-right">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Full Name*" required />
+                        <input type="email" name="email" placeholder="Email*" required />
+                    </div>
+                    <div class="form-group">
+                        <select name="service" required>
+
+                            <option value="">—Please choose an option—</option>
+                            <option>Web Development</option>
+                            <option>App Development</option>
+                            <option>UI/UX Design</option>
+                            <option>Maintenance and Support</option>
+                            <option>E-Commerce</option>
+                            <option>SEO</option>
+                        </select>
+                        <input type="tel" name="phone" placeholder="Mobile*" required />
+                    </div>
+                    <textarea rows="6" name="message" placeholder="Write Project Details*" required></textarea>
+                    <button type="submit">Send Message →</button>
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <h3>Blogs</h3>
+                <p>Complete IT Solutions in Gurugram</p>
+                <p>Vedantra.ai offers end-to-end digital services — from web & app development to UI/UX, SEO, and e-commerce. Based in Gurugram, we build smart, scalable, and result-driven solutions tailored to your business needs.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="service_web.html">Web Development</a></li>
+                    <li><a href="service_app.html">App Development</a></li>
+                    <li><a href="service_ui_ux.html">UI/UX Design</a></li>
+                    <li><a href="service_mantain.html">Maintenance and Support</a></li>
+                    <li><a href="service_ecom.html">E-Commerce</a></li>
+                    <li><a href="service_seo.html">SEO</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact">
+                <h3>Contact Us</h3>
+                <p>📞 +91-7289966310</p>
+                <p>📧 Vedantraai@gmail.com</p>
+                <p>📍 Huda Market Sector-10A, Gurugram (Haryana) 122001</p>
+            </div>
+
+            <div class="footer-col subscribe">
+                <h3>Keep up with us.</h3>
+                <form>
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="Your Email" />
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p>Join our mailing list to receive news and announcements.</p>
+                </form>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Vedantra.ai </p>
+            <div class="links">
+                <a href="tnc.html">Terms of Use</a>
+                <a href="privacy.html">Privacy policy</a>
+                <a href="refund.html">Refund Policy</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+<!-- gsap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+</script>
+
+<script src="contact.js"></script>
+<script>
+    const contactForm = document.querySelector(".contact-form");
+    const overlay = document.getElementById("overlay");
+    const overlayMessage = document.getElementById("overlayMessage");
+
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // prevent default form submit
+
+        // 1. Get values
+        const name = this.querySelector('input[placeholder="Full Name*"]').value;
+        const email = this.querySelector('input[placeholder="Email*"]').value;
+        const mobile = this.querySelector('input[placeholder="Mobile*"]').value;
+        const service = this.querySelector("select").value;
+        const message = this.querySelector("textarea").value;
+
+        // 2. Show loading overlay
+        overlay.classList.add("active");
+        overlayMessage.textContent = "Sending your message...";
+
+        // 3. Send data to backend
+        fetch("/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                phone: mobile,
+                message: message,
+                service: service,
+            }),
+        })
+            .then((res) => {
+                if (!res.ok) throw new Error("Failed to send");
+                return res.json();
+            })
+            .then(() => {
+                overlayMessage.textContent = "Message sent successfully!";
+                setTimeout(() => overlay.classList.remove("active"), 2500);
+            })
+            .catch(() => {
+                overlayMessage.textContent = "Something went wrong!";
+                setTimeout(() => overlay.classList.remove("active"), 2500);
+            });
+    });
+</script>
+
+
+
+<!-- Message Overlay -->
+<!-- Stylish Message Overlay -->
+<!-- Updated Stylish Overlay with Icon & Sparkles -->
+<!-- Overlay Message Loader -->
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const contactForm = document.querySelector(".contact-form");
+        const overlay = document.getElementById("overlay");
+        const overlayMessage = document.getElementById("overlayMessage");
+
+        contactForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const name = this.querySelector('input[placeholder="Full Name*"]').value;
+            const email = this.querySelector('input[placeholder="Email*"]').value;
+            const phone = this.querySelector('input[placeholder="Mobile*"]').value;
+            const service = this.querySelector("select").value;
+            const message = this.querySelector("textarea").value;
+
+            // Show animated overlay
+            overlay.classList.add("active");
+            overlayMessage.textContent = "Sending your message...";
+
+            try {
+                const res = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, phone, service, message })
+                });
+
+                if (res.ok) {
+                    overlayMessage.textContent = "✅ Message Sent Successfully!";
+                } else {
+                    overlayMessage.textContent = "⚠ Failed to send message.";
+                }
+            } catch (err) {
+                overlayMessage.textContent = "❌ Server Error!";
+            }
+
+            // Hide overlay after a short delay
+            setTimeout(() => overlay.classList.remove("active"), 2500);
+        });
+    });
+</script>
+
+
+
+
+<div class="custom-overlay" id="overlay">
+    <div class="glass-message">
+        <div class="loader-icon">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <div id="overlayMessage">Sending your message...</div>
+        <div class="sparkles"></div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

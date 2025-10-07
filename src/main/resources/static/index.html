@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vedantra.ai</title>
+
+  <!-- Font Awesome -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!--                    Remix Icon                            -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!--                    Style Sheet                           -->
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!--                    Font Family                           -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="loader">
+    <img src="assets/new_logo.png" alt="VedanTra Logo" />
+  </div>
+
+  <div class="main">
+    <div class="landing-Page">
+        <header>
+          <nav>
+   <a href="#"> <div class="logo">
+      <img src="assets/new_logo.png" alt="Logo">
+    </div></a>
+
+    <div class="nav-links">
+      <a href="#">HOME</a>
+      <a href="about.html">ABOUT US</a>
+      <div class="dropdown">
+        <a href="#">SERVICES ▼</a>
+        <div class="dropdown-content">
+          <div style="height: 20px;"></div>
+          <ul style="background: #7B209A; height: 2px;;"></ul>
+           <a href="service_web.html">Web Development</a>
+            <a href="service_app.html">App Development</a>
+            <a href="service_ui_ux.html">UI/UX Design</a>
+            <a href="service_mantain.html">Maintanance and Support</a>
+            <a href="service_ecom.html">E-Commerce</a>
+            <a href="service_seo.html">SEO</a>
+        </div>
+      </div>
+      <a href="portfolio.html">PORTFOLIO</a>
+      <a href="contact.html">CONTACT US</a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <i class="ri-menu-line"></i>
+    </div>
+        </nav>
+        </header>
+
+  <div class="sidebar" id="sidebar">
+    <a href="#">HOME</a>
+    <a href="about.html">ABOUT US</a>
+
+    <div class="services-toggle" onclick="toggleServices()">
+      <span>SERVICES</span>
+      <span id="toggle-icon">+</span>
+    </div>
+    <div class="sub-services" id="subServices">
+       <a href="service_web.html">Web Development</a>
+            <a href="service_app.html">App Development</a>
+            <a href="service_ui_ux.html">UI/UX Design</a>
+            <a href="service_mantain.html">Maintanance and Support</a>
+            <a href="service_ecom.html">E-Commerce</a>
+            <a href="service_seo.html">SEO</a>
+    </div>
+
+    <a href="portfolio.html">PORTFOLIO</a>
+    <a href="contact.html">CONTACT US</a>
+  </div>
+
+    <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <!-- <span class="badge">20% OFF Best Web Agency</span> -->
+      <h1>We’re <span style="color: #7B209A;">Vedantra.ai</span><br><span style="color: #7B209A;">IT </span>Solutions<br>Agency</h1>
+      <p>Your digital journey deserves a partner who understands your vision and has the tools to bring it to life. Join hands with Vedantra.ai and let’s create digital solutions that don’t just work — they wow. 🚀</p>
+      <a href="contact.html" class="hero-btn">Let's Talk &nbsp;≫</a>
+    </div>
+    <div class="hero-image">
+      <img src="assets/hero/flat-cms-concept-illustration.png" alt="SEO Illustration">
+    </div>
+
+ 
+
+  </section>
+
+   
+
+
+  
+    </div>
+
+    <section class="thoda-dekha">
+      <div class="title">
+    <h2>Best Web <span>Service</span> Agency</h2>
+    <div class="underline"></div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Achieve Your <br /> Online Goals</h3>
+      <p>
+        We help businesses achieve their online goals and stand out in a crowded
+        marketplace. Our IT Solutions deliver the visibility,
+        traffic, leads, or engagement you’re looking for.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Comprehensive <br /> Services</h3>
+      <p>
+        With expertise in web development, app development, UI/UX designs, SEO, we offer a full suite of services tailored to cover
+        every digital need. We are a top-tier  Agency in Gurugram
+        with a proven track record.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Custom <br /> Strategies</h3>
+      <p>
+        No matter your business type, we understand that each one is unique and
+        requires custom strategies. Our expertise makes a difference—we create
+        tailored solutions designed to help your business succeed.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Innovative &<br /> Data-Driven</h3>
+      <p>
+        Our team stays on top of industry trends to craft innovative,
+        data-driven strategies, ensuring your business thrives. With our
+        strategies, your business can outrank the competition and turn visitors
+        into loyal customers.
+      </p>
+    </div>
+  </div>
+    </section>
+
+
+    <!-- Service Section -->
+
+    <section class="services-section">
+      <h3>Our Services</h3>
+      <div class="services-container">
+        <div class="service-box">
+          <img src="assets/web.jpg " alt="Marketing Icon" />
+          <h3>Web Development</h3>
+          <p>We craft responsive, user-friendly websites that look great on all devices and deliver real results.
+            Whether you need a personal site, business platform, or e-commerce store, we build solutions that reflect
+            your brand and engage your audience.</p>
+          <a href="service_web.html" style="color: #ccc;">Learn More ⤴</a>
+        </div>
+
+        <div class="service-box">
+          <img src="assets/app.jpg" alt="Development Icon" />
+          <h3>App Development</h3>
+          <p>We build high-performing mobile apps tailored to your goals — from Android to iOS to cross-platform. Whether you're a startup or a growing business, our apps are designed to scale, engage users, and deliver results.</p>
+          <a href="service_app.html" style="color: #ccc;">Learn More ⤴</a>
+        </div>
+
+        <div class="service-box">
+          <img src="assets/uiux.jpg" alt="Web Design Icon" />
+          <h3>UI/UX Design</h3>
+          <p>We believe great design is more than just looks — it’s how it works. Our UI/UX experts craft digital experiences that are clean, modern, and user-focused. Whether it’s a mobile app or a website, we design interfaces that guide users smoothly, reduce friction, and keep them engaged.</p>
+          <a href="service_ui_ux.html" style="color: #ccc;">Learn More ⤴</a>
+        </div>
+
+        <div class="service-box">
+          <img src="assets/Web_Maint.jpg" alt="SEO Icon" />
+          <h3>Maintenance & Support</h3>
+          <p>We don’t disappear after delivery. At Vedantra.ai, we offer dedicated maintenance and support to ensure your website or app stays fast, secure, and bug-free — always.</p>
+          <a href="service_mantain.html" style="color: #ccc;">Learn More ⤴</a>
+        </div>
+
+        <div class="service-box">
+          <img src="assets/E-commerce.jpg" alt="Ads Icon" />
+          <h3>E-Commerce</h3>
+          <p>We build high-performance e-commerce platforms that not only look stunning but also drive real sales. From intuitive product displays to seamless checkout experiences, we craft online stores that are fast, secure, and optimized for conversions.</p>
+          <a href="service_ecom.html" style="color: #ccc;">Learn More ⤴</a>
+        </div>
+
+        <div class="service-box">
+          <img src="assets/SEO.jpg" alt="Branding Icon" />
+          <h3>SEO</h3>
+          <p>We offer result-driven SEO services that help your business appear at the top of search results. We focus on smart keyword research, on-page optimization, backlink building, and technical SEO to improve visibility and drive organic traffic.</p>
+          <a href="#" style="color: #ccc;">Learn More ⤴</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!--   Who We Serve  -->
+
+    <section class="serve-section">
+      <h3>Who We Serve</h3>
+      <p class="subtext">From startups to enterprises — we serve businesses of all kinds.</p>
+
+      <div class="serve-container">
+        <div class="serve-box">
+          <img src="assets/serve/open-book.png" alt="Educational Icon">
+          <h3>Educational</h3>
+        </div>
+
+        <div class="serve-box">
+          <img src="assets/serve/healthcare.png" alt="Healthcare Icon">
+          <h3>Healthcare</h3>
+        </div>
+
+        <div class="serve-box">
+          <img src="assets/serve/ecommerce.png" alt="E-Commerce Icon">
+          <h3>E-Commerce</h3>
+        </div>
+
+        <div class="serve-box">
+          <img src="assets/serve/flight-ticket.png" alt="Travel Icon">
+          <h3>Travel</h3>
+        </div>
+
+        <div class="serve-box">
+          <img src="assets/serve/house.png" alt="Real Estate Icon">
+          <h3>Real Estate</h3>
+        </div>
+
+        <div class="serve-box">
+          <img src="assets/serve/power.png" alt="Fitness Icon">
+          <h3>Fitness</h3>
+        </div>
+
+        <div class="serve-box">
+          <img src="assets/serve/burger.png" alt="Food Icon">
+          <h3>Food</h3>
+        </div>
+
+        <div class="serve-box">
+          <img src="assets/serve/insurance.png" alt="Finance Icon">
+          <h3>Finance & Insurance</h3>
+        </div>
+
+        <div class="serve-box">
+          <img src="assets/serve/vehicle.png" alt="Automotive Icon">
+          <h3>Automotive</h3>
+        </div>
+
+        <div class="serve-box">
+          <img src="assets/serve/construction.png" alt="Construction Icon">
+          <h3>Construction</h3>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <section class="work-section">
+      <h3>How we Work</h3>
+      <div class="work-steps">
+        <div class="step-box">
+          <div class="step-icon">
+            <img src="assets/Work-section/tea.png" alt="Step 1 Icon">
+          </div>
+          <h3>Step 1</h3>
+          <p class="subtitle">You Spill the Tea, We Bring the Strategy!</p>
+          <p class="desc">
+            Tell us what you need—website, application, SEO, maintenace & support? We listen like gossip-loving besties and get straight to
+            work.
+          </p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-icon">
+            <img src="assets/Work-section/cooker.png" alt="Step 2 Icon">
+          </div>
+          <h3>Step 2</h3>
+          <p class="subtitle">We Cook Up Some Marketing Masala!</p>
+          <p class="desc">
+            Our AI + creative squad mixes spicy strategies, sizzling designs, and a secret sauce (nope, we won’t tell
+            you what’s in it).
+          </p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-icon">
+            <img src="assets/Work-section/boom.png" alt="Step 3 Icon">
+          </div>
+          <h3>Step 3</h3>
+          <p class="subtitle">Boom! We Set the Internet on Fire!</p>
+          <p class="desc">
+            Your project goes live—fast, smooth, and packed with results.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-container">
+        <h2>
+          Let’s discuss make <br />
+          something <em>cool</em> together
+        </h2>
+        <a href="contact.html" class="cta-button">Request Quote <span>✈</span></a>
+      </div>
+    </section>
+
+    <section class="scroller-section">
+      <div class="scroller-wrapper">
+        <div class="scroller">
+          <span>Web Development, App Development, UI/UX Design, Maintenance and Support, E-Commerce, SEO</span>
+          <!-- <span>SEO, SMM, PPC, Video Editing, Branding, Web Design, Development, Marketing, </span> -->
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-col">
+          <h3>Blogs</h3>
+          <p>Complete IT Solutions in Gurugram</p>
+          <p>Vedantra.ai offers end-to-end digital services — from web & app development to UI/UX, SEO, and e-commerce. Based in Gurugram, we build smart, scalable, and result-driven solutions tailored to your business needs.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="service_web.html">Web Development</a></li>
+            <li><a href="service_app.html">App Development</a></li>
+            <li><a href="service_ui_ux.html">UI/UX Design</a></li>
+            <li><a href="service_mantain.html">Maintenance and Support</a></li>
+            <li><a href="service_ecom.html">E-Commerce</a></li>
+            <li><a href="service_seo.html">SEO</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact">
+          <h3>Contact Us</h3>
+          <p>📞 +91-7289966310</p>
+          <p>📧 Vedantraai@gmail.com</p>
+          <p>📍 Huda Market Sector-10A, Gurugram (Haryana) 122001</p>
+        </div>
+
+        <div class="footer-col subscribe">
+          <h3>Keep up with us.</h3>
+          <form>
+            <div class="input-wrapper">
+              <input type="email" placeholder="Your Email" />
+              <button type="submit">Subscribe</button>
+            </div>
+            <p>Join our mailing list to receive news and announcements.</p>
+          </form>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="footer-bottom">
+        <p>Copyright © 2025 Vedantra.ai </p>
+        <div class="links">
+          <a href="tnc.html">Terms of Use</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="refund.html">Refund Policy</a>
+        </div>
+      </div>
+    </footer>
+
+
+  </div>
+
+
+
+
+
+
+
+
+  <!-- gsap -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+</script>
+  <script src="script.js
+"></script>
+
+</body>
+
+</html>

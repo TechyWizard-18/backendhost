@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI/UX Design | Vedantra.ai</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .preloader {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #1c0033;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+  color: white;
+  transition: opacity 0.5s ease;
+}
+.preloader i {
+  font-size: 60px;
+  color: #ff69f2;
+  animation: pulse 1.5s infinite;
+}
+.preloader span {
+  margin-top: 16px;
+  font-size: 20px;
+  color: #ffcaff;
+  font-weight: 600;
+  background: linear-gradient(90deg, #e040fb, #8e24aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flicker 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.6;
+  }
+}
+.main-content {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.main-content.visible {
+  opacity: 1;
+}
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0b001a;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+ header {
+  padding: 0px 60px;
+  background: rgba(15, 15, 26, 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+  .logo {
+      display: flex;
+      align-items: center;
+      height: 100px;
+      width: 130px;
+    }
+
+    .logo img {
+      height: 180px;
+      margin-right: 10px;
+      object-fit: cover;
+      width: 180px;
+      object-fit: cover;
+    }
+
+.navbar {
+  flex: none;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-right {
+    justify-content: flex-end;
+    width: auto;
+  }
+
+  .navbar-toggle {
+    display: block;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #0b001a;
+    display: none;
+    padding: 20px;
+    z-index: 998;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+    
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(106, 0, 128, 0.6), rgba(0, 0, 0, 0.85));
+      padding: 80px 20px 50px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #f94ef7, #d76dff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+    .section-title {
+      font-size: 2.4rem;
+      color: #f94ef7;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    ul, ol {
+      font-size: 1.2rem;
+      line-height: 2;
+      list-style: none;
+      padding: 0;
+    }
+    .tech-stack ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0;
+    }
+    .tech-stack ul li {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      list-style: none;
+      border: 1px solid transparent;
+      transition: transform 0.3s ease;
+    }
+    .tech-stack ul li i {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 10px;
+      color: #f94ef7;
+    }
+    .tech-stack ul li:hover {
+      box-shadow: 0 0 15px rgba(249, 78, 247, 0.4);
+      transform: scale(1.05);
+    }
+    .why-us {
+      background: radial-gradient(circle, #1a1a26, #0f0f1a);
+      text-align: center;
+      padding-bottom: 40px;
+    }
+    .cta-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .cta-section a {
+      display: inline-block;
+      background: #f94ef7;
+      color: #0f0f1a;
+      padding: 16px 30px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .cta-section a:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+    footer {
+      background: #1a1a26;
+      color: #aaa;
+      padding: 10px 10px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1 1 220px;
+}
+
+.footer-col h3 {
+  font-size: 1.2rem;
+  color: #FEFEFE;
+  margin-bottom: 15px;
+}
+
+.footer-col p,
+.footer-col li {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col.subscribe .input-wrapper {
+  display: flex;
+  margin-bottom: 10px;
+  background-color: #25163F;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.footer-col.subscribe input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  color: white;
+  background-color: #25163F;
+}
+
+.footer-col.subscribe button {
+  background-color: #F94EF7;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 40px 0 20px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footer-bottom .links a {
+  color: #ccc;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.footer-bottom .links a:hover {
+  color: #F94EF7;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom .links a {
+    margin-left: 0;
+    margin-right: 15px;
+  }}
+    .split-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .split-section img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(249, 78, 247, 0.4);
+    }
+    .split-text, .split-image {
+      flex: 1;
+    }
+
+
+    .navbar {
+  margin-left: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f94ef7;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #14002d;
+  padding: 15px 0;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(249, 78, 247, 0.15);
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+  list-style: none;
+}
+
+
+.dropdown-menu li a {
+  display: block;
+  color: #fff;
+}
+
+.dropdown-menu li a:hover {
+  color: #f94ef7;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.arrow {
+  font-size: 0.6em;
+  margin-left: 4px;
+}
+
+/* Desktop dropdown on hover */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #0b001a;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 20px;
+    z-index: 998;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    top: auto;
+    left: auto;
+    box-shadow: none;
+    padding-left: 10px;
+    background: transparent;
+  }
+
+  .navbar-toggle {
+    display: block;
+    margin-left: auto;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .dropdown .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .split-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .split-section .split-image,
+  .split-section .split-text {
+    width: 100%;
+  }
+  .split-section img {
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .split-text ul,
+  .split-text ol {
+    text-align: left;
+    padding: 0 20px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="preloader">
+  <i class="fas fa-laptop-code"></i>
+  <span>Loading UI/UX Design Page...</span>
+</div>
+<div class="main-content">
+
+  <header>
+    <div class="logo">
+      <img src="assets/new_logo.png" alt="Vedantra.ai Logo">
+    </div><div class="header-right">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">SERVICES <span class="arrow">▼</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="service_web.html">Web Development</a></li>
+            <li><a href="service_app.html">App Development</a></li>
+            <li><a href="service_ui_ux.html">UI/UX Design</a></li>
+            <li><a href="service_mantain.html">Maintanance and Support</a></li>
+            <li><a href="service_ecom.html">E-Commerce</a></li>
+            <li><a href="service_seo.html">SEO</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html">PORTFOLIO</a></li>
+        <li><a href="contact.html">CONTACT US</a></li>
+      </ul>
+    </nav>
+    <div class="navbar-toggle"><i class="fas fa-bars"></i></div>
+  </div>
+  </header>
+  <section class="hero">
+    <h1>UI/UX Design Services</h1>
+    <p>We design experiences that engage users and elevate your brand identity with clean, intuitive interfaces.</p>
+  </section>
+  <section class="features split-section">
+    <div class="split-image">
+      <img src="ui.jpg" alt="UI UX Design Image">
+    </div>
+    <div class="split-text">
+      <h2 class="section-title">What We Offer</h2>
+      <ul>
+        <li>Wireframing and prototyping</li>
+        <li>User research and persona building</li>
+        <li>Responsive interface design</li>
+        <li>Usability testing</li>
+        <li>High-fidelity mockups & design systems</li>
+      </ul>
+    </div>
+  </section>
+  <section class="approach split-section">
+    <div class="split-text">
+      <h2 class="section-title">Our Approach</h2>
+      <ol>
+        <li><strong>Understand:</strong> Deep dive into your audience, brand, and needs</li>
+        <li><strong>Wireframe:</strong> Map user flows and layout strategies</li>
+        <li><strong>Design:</strong> Create sleek, modern visuals</li>
+        <li><strong>Validate:</strong> Run usability tests and iterate</li>
+        <li><strong>Handoff:</strong> Deliver ready-to-dev assets</li>
+      </ol>
+    </div>
+    <div class="split-image">
+      <img src="ux.jpg" alt="Our Approach Image">
+    </div>
+  </section>
+  <section class="tech-stack">
+  <h2 class="section-title">Design Tools We Use</h2>
+  <ul>
+    <li>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" style="width: 50px; height: 50px;" />
+      Figma
+    </li>
+    <li>
+      <img src="https://cdn.worldvectorlogo.com/logos/adobe-xd-1.svg" alt="Adobe XD" style="width: 50px; height: 50px;" />
+      Adobe XD
+    </li>
+    <li>
+      <img src="https://cdn.worldvectorlogo.com/logos/sketch-2.svg" alt="Sketch" style="width: 50px; height: 50px;" />
+      Sketch
+    </li>
+    <li>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/InVision_logo.png" alt="InVision" style="width: 50px; height: 50px;" />
+      InVision
+    </li>
+    <li>
+      <img src="https://cdn.worldvectorlogo.com/logos/zeplin.svg" alt="Zeplin" style="width: 50px; height: 50px;" />
+      Zeplin
+    </li>
+  </ul>
+</section>
+
+  <section class="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <ul>
+      <li><strong>Q:</strong> Do you offer just design or development too?<br><strong>A:</strong> We focus on UI/UX design but collaborate with developers for seamless handoffs.</li>
+      <li><strong>Q:</strong> Can I see a prototype before development?<br><strong>A:</strong> Yes, we share interactive wireframes and mockups for feedback.</li>
+      <li><strong>Q:</strong> Is it mobile-responsive?<br><strong>A:</strong> Every design is responsive and optimized for all screen sizes.</li>
+    </ul>
+  </section>
+  <section class="why-us">
+    <h2 class="section-title">Why Choose Vedantra.ai?</h2>
+    <p>We blend creative design with cutting-edge code to craft user experiences that captivate and convert. Our development process is agile, user-focused, and results-driven.</p>
+  </section>
+  <section class="cta-section">
+    <a href="contact.html">Start Your Design Journey</a>
+  </section>
+  <footer>
+<div class="footer-bottom">
+        <p>Copyright © 2025 Vedantra.ai. All rights reserved. </p>
+        <div class="links">
+          <a href="tnc.html">Terms of Use</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="refund.html">Refund Policy</a>
+        </div>
+      </div>
+    </footer>
+</div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+  <script>
+  window.addEventListener("load", () => {
+    const preloader = document.querySelector(".preloader");
+    const main = document.querySelector(".main-content");
+    setTimeout(() => {
+      preloader.style.display = "none";
+      main.classList.add("visible");
+    }, 1800);
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector('.navbar-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Mobile dropdown toggle
+    dropdownToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
